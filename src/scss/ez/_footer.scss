@@ -1,0 +1,43 @@
+.ez-footer {
+  h5 {
+    font-size: 1.111rem;
+    font-weight: bold;
+  }
+
+  .ez-social-zone {
+    color: $footer-social-text-color;
+    display: flex;
+    align-items: center;
+    .ez-socials {
+      align-items: center;
+      font-size: $footer-social-text-size;
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        .rounded-icon {
+          background: #fff;
+          width: 30px;
+          height: 30px;
+          border-radius: 15px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-right: $footer-social-distance;
+          .icon {
+            fill: $footer-social-text-color;
+            width: $footer-social-size;
+            height: $footer-social-size;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+//Tablet horizontal / small desktop
+@media (min-width: #{map-get($grid-breakpoints, lg)}) {
+
+}
