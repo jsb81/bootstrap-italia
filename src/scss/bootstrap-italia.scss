@@ -141,6 +141,45 @@
 @import 'utilities/focus';
 @import 'utilities/icons';
 
+//////////////// MODIFICHE ////////////////
+
+// Chosen (eZ Edit Toolbar)
+@import "chosen/bootstrap-chosen-variables";
+@import "chosen/bootstrap-chosen";
+
+//Font Awesome 5.5.0
+@import 'fontawesome550/variables';
+@import 'fontawesome550/mixins';
+@import 'fontawesome550/core';
+@import 'fontawesome550/larger';
+@import 'fontawesome550/fixed-width';
+@import 'fontawesome550/list';
+@import 'fontawesome550/bordered-pulled';
+@import 'fontawesome550/animated';
+@import 'fontawesome550/rotated-flipped';
+@import 'fontawesome550/stacked';
+@import 'fontawesome550/icons';
+@import 'fontawesome550/screen-reader';
+
+@font-face {
+  font-family: 'Font Awesome 5 Free';
+  font-style: normal;
+  font-weight: 900;
+  src: url('#{$fa-font-path}/fa-solid-900.eot');
+  src: url('#{$fa-font-path}/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+  url('#{$fa-font-path}/fa-solid-900.woff2') format('woff2'),
+  url('#{$fa-font-path}/fa-solid-900.woff') format('woff'),
+  url('#{$fa-font-path}/fa-solid-900.ttf') format('truetype'),
+  url('#{$fa-font-path}/fa-solid-900.svg#fontawesome') format('svg');
+}
+
+.fa,
+.fas {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
 // eZ-Publish by Trentino Digitale SpA
 @import 'ez/variables';
+@import 'ez/header';
 @import 'ez/footer';

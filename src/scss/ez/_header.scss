@@ -1,0 +1,9 @@
+.Header-logo {
+  max-height: 80px;
+}
+
+@media (max-width: #{map-get($grid-breakpoints, lg)}) {
+  .Header-logo {
+    max-height: 40px;
+  }
+}
