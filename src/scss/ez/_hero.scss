@@ -1,0 +1,24 @@
+.ez-hero-overlying {
+  margin-top: -5rem;
+
+  .card-text {
+    padding: 0 10rem;
+  }
+}
+
+
+@media (max-width: #{map-get($grid-breakpoints, md)}) {
+  .ez-hero-overlying {
+    .card-text {
+      padding: 0 2rem;
+    }
+  }
+}
+
+@media (max-width: #{map-get($grid-breakpoints, sm)}) {
+  .ez-hero-overlying {
+    .card-text {
+      padding: 0;
+    }
+  }
+}
