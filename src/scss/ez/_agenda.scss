@@ -1,0 +1,90 @@
+.ez-agenda {
+  @extend .pt-3;
+  @extend .pt-1;
+
+  .container {
+    .arrow {
+      margin-top: -39px;
+      .arrow-white {
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-top: 24px solid;
+        color: #fff;
+        display: block;
+        height: 0;
+        margin: 0 auto;
+        width: 0;
+      }
+    }
+    .see-all {
+      font-size: 1.4rem;
+    }
+
+    .selected-day {
+      .selected-day-arrow {
+        height: 0;
+        border-top: 2rem solid $analogue-2;
+      }
+    }
+
+    .next-button {
+      @extend .text-white;
+      cursor: pointer;
+      font-size: 2.4rem;
+      i {
+        margin-top: 1.8rem;
+      }
+    }
+
+    .prev-button {
+      @extend .text-white;
+      cursor: pointer;
+      font-size: 2.4rem;
+      i {
+        margin-top: 1.8rem;
+      }
+    }
+    .size5Perc {
+      flex: 0 0 5%;
+      width: 5% !important;
+    }
+
+    .size90Perc {
+      flex: 0 0 90%;
+      width: 90% !important;
+    }
+
+    .day {
+      color: $primary;
+      background: white;
+      font-size: 1.2rem;
+      height: 4rem;
+      margin-left: 15%;
+      padding: .2rem;
+      width: 70%;
+    }
+
+    .day.selected {
+      @extend .analogue-2-bg;
+      background: $analogue-2 !important;
+    }
+
+    .day-events {
+      @extend .mt-4;
+      @extend .primary-bg-a7;
+    }
+
+    .day-bg-primary-a4 {
+      background: $primary-a4 !important;
+    }
+
+
+  }
+}
+
+//Tablet horizontal / small desktop
+@media (max-width: #{map-get($grid-breakpoints, lg)}) {
+  .selected-day {
+    display: none !important;
+  }
+}

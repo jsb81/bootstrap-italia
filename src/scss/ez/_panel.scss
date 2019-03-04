@@ -1,0 +1,97 @@
+.ez-font16 {
+  font-size: 16px;
+}
+
+/* EVENTO */
+
+.event {
+  @extend .p-5;
+  margin-bottom: 0 !important;
+  .event-tematica {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
+
+.event.analogue-2-bg .event-tematica a {
+  color: $primary-a7;
+}
+
+.event.primary-bg-a7 .event-tematica a {
+  color: $analogue-2;
+}
+
+.event.analogue-2-bg .event-date,
+.event.analogue-2-bg .event-details {
+  border-left: 1px solid $primary-a7;
+  padding-left: 1.2rem;
+}
+
+.event.primary-bg-a7 .event-date,
+.event.primary-bg-a7 .event-details {
+  border-left: 1px solid $analogue-2;
+  padding-left: 1.2rem;
+}
+
+.event .event-date .event-element {
+  font-size: 1rem;
+}
+
+.event .event-date .event-element.up {
+  position: relative;
+  top: -1.2rem;
+}
+
+.event.analogue-2-bg .event-details .event-title {
+  @extend .mb-3;
+  color: $primary-a7;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.event.primary-bg-a7 .event-details .event-title {
+  @extend .mb-3;
+  color: $analogue-2;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.event.analogue-2-bg .event-details .event-abstract {
+  font-size: 1.1rem;
+}
+
+.event.analogue-2-bg .calendar-arrow {
+  position: relative;
+  top: -2rem;
+  left: -3rem;
+  height: 0;
+  width: 0;
+  border-left: 1.2rem solid transparent;
+  border-right: 1.2rem solid transparent;
+  border-top: 1.2rem solid $primary-a7;
+}
+
+
+.event.primary-bg-a7 .calendar-arrow {
+  position: relative;
+  top: -2rem;
+  left: -3rem;
+  height: 0;
+  width: 0;
+  border-left: 1.2rem solid transparent;
+  border-right: 1.2rem solid transparent;
+  border-top: 1.2rem solid $analogue-2;
+}
+
+
+@media (max-width: #{map-get($grid-breakpoints, md)}) {
+
+  .calendar-arrow{
+    display: none;
+  }
+
+  .event .event-tematica {
+    margin-bottom: 4rem;
+  }
+
+}

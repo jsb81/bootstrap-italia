@@ -1,0 +1,17 @@
+.content-line {
+  @extend .border;
+  @extend .p-4;
+  margin-top: -1px;
+
+  .content-line-body {
+    .content-line-title {
+      a {
+        @extend .text-secondary;
+      }
+
+    }
+    .content-line-chevron {
+      padding-top: 70%
+    }
+  }
+}
