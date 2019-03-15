@@ -757,3 +757,15 @@ div.split div.three-center
 */
 
 .blueimp-gallery{display:none}
+
+/* =recupero classi vecchie
+-------------------------------------------------
+*/
+
+.global-view-full{
+  @extend .container;
+}
+
+.fa-exchange {
+  @extend .fa-exchange-alt;
+}

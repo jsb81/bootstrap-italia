@@ -1,0 +1,31 @@
+// Big screen only
+@media (min-width: #{map-get($grid-breakpoints, lg)}) {
+  .class-persona {
+    padding-bottom:0 !important;
+
+    .u-content-main {
+      margin-bottom:0 !important;
+    }
+
+    .info-persona {
+      position: relative;
+      .contacts-persona {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+    .link-persona {
+      position: relative;
+      .biografia-persona {
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+      .provvedimenti-persona {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+    }
+  }
+}
