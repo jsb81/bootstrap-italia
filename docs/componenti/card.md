@@ -372,3 +372,45 @@ Le proporzioni ottimali dell'immagine per questa card sono 17:21.
   </div>
 </div>
 {% endcapture %}{% include example.html content=example %}
+
+## Card Teaser
+
+Per creare Card con contenuti brevi o di _"anteprima"_ è sufficiente aggiungere all'elemento `.card-wrapper` una classe `.card-teaser-wrapper` e all'elemento `.card` una classe `.card-teaser`.
+
+Come per ogni elemento, è possibile aggiungere le classi `rounded` o `shadow` per aggiungere bordi, effetti di arrotondamento o ombreggiatura.
+
+{% capture example %}
+<div class="card-wrapper card-teaser-wrapper">
+  <!--start card-->
+  <div class="card card-teaser">
+    <div class="card-body">
+      <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+  <!--end card-->
+  <!--start card-->
+  <div class="card card-teaser rounded shadow">
+    <div class="card-body">
+      <h5 class="card-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…</h5>
+      <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+  </div>
+  <!--end card-->
+  <!--start card-->
+  <div class="card card-teaser rounded shadow">
+    <svg class="icon">
+      <use xlink:href="/dist/svg/sprite.svg#it-clip"></use>
+    </svg>
+    <div class="card-body">
+      <h5 class="card-title">
+        <a href="#">Lorem ipsum dolor sit amet</a>
+      </h5>
+      <div class="card-text">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor…</p>
+      </div>
+    </div>
+  </div>
+  <!--end card-->
+</div>
+{% endcapture %}{% include example.html content=example %}
