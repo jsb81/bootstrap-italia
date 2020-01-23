@@ -8,8 +8,7 @@ const gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   babel = require('gulp-babel'),
   replace = require('gulp-replace'),
-  header = require('gulp-header'),
-  footer = require('gulp-footer'),
+  gap = require('gulp-append-prepend'),
   log = require('fancy-log'),
   touch = require('gulp-touch-cmd'),
   spawn = require('cross-spawn'),
@@ -56,7 +55,7 @@ const Paths = {
     'src/js/plugins/progress-donut.js',
     'src/js/plugins/list.js',
     'src/js/plugins/imgresponsive.js',
-    //'src/js/plugins/timepicker.js',
+    'src/js/plugins/timepicker.js',
     'src/js/plugins/input-number.js',
     'src/js/plugins/carousel.js',
     'src/js/plugins/transfer.js',
@@ -81,11 +80,11 @@ const Paths = {
 }
 
 const bootstrapItaliaBanner = [
-  '/**',
-  ' * <%= pkg.description %>',
-  ' * @version v<%= pkg.version %>',
-  ' * @link <%= pkg.homepage %>',
-  ' * @license <%= pkg.license %>',
+  '/*!',
+  ' * ' + pkg.description,
+  ' * @version v' + pkg.version,
+  ' * @link ' + pkg.homepage,
+  ' * @license ' + pkg.license,
   ' */',
   '',
 ].join('\n')
@@ -107,16 +106,16 @@ const jqueryVersionCheck =
 gulp.task('scss-min', () => {
   return gulp
     .src(Paths.SOURCE_SCSS)
+    .pipe(gap.prependText(bootstrapItaliaBanner))
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(
       cleanCSS({
         level: 2,
-        specialComments: 0,
+        specialComments: 'all',
       })
     )
-    .pipe(header(bootstrapItaliaBanner, { pkg: pkg }))
     .pipe(
       rename({
         suffix: '.min',
@@ -151,17 +150,16 @@ gulp.task('js-min', () => {
     )
     .pipe(uglify())
     .pipe(
-      header(
+      gap.prependText(
         bootstrapItaliaBanner +
           '\n' +
           jqueryCheck +
           '\n' +
           jqueryVersionCheck +
-          '\n+function () {\n',
-        { pkg: pkg }
+          '\n+function () {\n'
       )
     )
-    .pipe(footer('\n}();\n'))
+    .pipe(gap.appendText('\n}();\n'))
     .pipe(
       rename({
         suffix: '.min',
@@ -186,7 +184,7 @@ gulp.task('js-bundle-min', () => {
       })
     )
     .pipe(uglify())
-    .pipe(header(bootstrapItaliaBanner, { pkg: pkg }))
+    .pipe(gap.prependText(bootstrapItaliaBanner))
     .pipe(
       rename({
         suffix: '.min',
